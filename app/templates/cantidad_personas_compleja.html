@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Resultados para el Tipo de Vivienda "{{ tipo_vivienda }}" y Tipo de Contrato "{{ tipo_contrato }}"</h1>
+    {% if resultados %}
+    <table border="1" style="margin: auto; text-align: center;">
+        <thead>
+            <tr>
+                <th>Tipo de Vivienda</th>
+                <th>Total Personas</th>
+                <th>Tipo de Contrato</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in resultados %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p style="text-align: center;">No se encontraron resultados para el tipo de vivienda "{{ tipo_vivienda }}" y tipo de contrato "{{ tipo_contrato }}".</p>
+    {% endif %}
+</body>
+</html>

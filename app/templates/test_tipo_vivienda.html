@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Tipo de Vivienda</title>
+</head>
+<body>
+    <h1>Valores Únicos de Tipo de Vivienda</h1>
+    {% if resultados %}
+    <ul>
+        {% for row in resultados %}
+        <li>{{ row[0] }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No se encontraron valores en la columna tipo_vivienda.</p>
+    {% endif %}
+</body>
+</html>

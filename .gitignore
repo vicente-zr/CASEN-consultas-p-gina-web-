@@ -1,0 +1,12 @@
+# Carpetas y archivos innecesarios
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Configuraciones específicas del sistema
+*.log
+.env
+
+# Archivos sensibles
+config.py

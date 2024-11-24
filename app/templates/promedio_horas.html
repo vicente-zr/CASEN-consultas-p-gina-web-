@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Promedio de Horas Trabajadas para Nivel Educacional "{{ nivel_educacional }}"</h1>
+    {% if resultados %}
+    <table border="1" style="margin: auto; text-align: center;">
+        <thead>
+            <tr>
+                <th>Nivel Educacional</th>
+                <th>Promedio de Horas Trabajadas</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in resultados %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p style="text-align: center;">No se encontraron resultados para el nivel educacional "{{ nivel_educacional }}".</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Personas sin Ocupación Conocida y Sin Contrato</h1>
+    <h2 style="text-align: center;">Rango de Edad: {{ edad_min }} - {{ edad_max }}</h2>
+    {% if resultados %}
+    <table border="1" style="margin: auto; text-align: center;">
+        <thead>
+            <tr>
+                <th>ID Hogar</th>
+                <th>ID Persona</th>
+                <th>Edad</th>
+                <th>Ocupación</th>
+                <th>Tipo de Contrato</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in resultados %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p style="text-align: center;">No se encontraron resultados para el rango de edades {{ edad_min }} - {{ edad_max }}.</p>
+    {% endif %}
+</body>
+</html>
